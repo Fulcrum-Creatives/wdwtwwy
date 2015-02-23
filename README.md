@@ -1,2 +1,3 @@
-# wdwtwwy
-The We Don't Want to Work With You WordPress Theme
+WordPress Theme Boilerplate
+===========================
+A WordPress Theme Boilerplate
