@@ -42,7 +42,11 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'js/lib/no-conflict/no-conflict.js',
-                    'js/lib/skip-navigation/skip-navigation.js'
+                    'js/lib/skip-navigation/skip-navigation.js',
+                    'js/lib/mobile-menu/mobile-menu.js',
+                    'js/lib/carousel/carousel.js',
+                    'js/lib/twitter/twitter.js',
+                    'js/lib/faq/faq.js'
                 ],
                 dest: 'js/lib/dev.main.js',
             },
@@ -86,7 +90,7 @@ module.exports = function(grunt) {
                 sourcemap: 'none'
               },
               files: {
-                'sass/style.css': 'sass/style.scss',
+                'style.css': 'sass/style.scss',
                 'css/dev/dev.style.css': 'sass/style.scss'
               }
             }
@@ -98,15 +102,8 @@ module.exports = function(grunt) {
                 ]
             },
             style: { 
-                src: 'sass/style.css'
+                src: 'style.css'
             }
-        },
-        cssmin: {
-          target: {
-            files: {
-              'style.css': 'sass/style.css'
-            }
-          }
         },
         // Watch
         watch: {
@@ -122,7 +119,7 @@ module.exports = function(grunt) {
             },
             css: {
               files: ['sass/**/*.scss'],
-              tasks: ['sass', 'postcss', 'cssmin'],
+              tasks: ['sass', 'postcss'],
             }
         }
     });
@@ -141,13 +138,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     // PostCSS
     grunt.loadNpmTasks('grunt-postcss');
-    // CSSMin
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
     // JShint
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Register Plugins
-    grunt.registerTask('default', ['concat', 'uglify', 'watch', 'postcss', 'sass', 'cssmin', 'jshint']);
+    grunt.registerTask('default', ['concat', 'uglify', 'watch', 'postcss', 'sass', 'jshint']);
     grunt.registerTask('build', ['clean', 'copy']);
 
 };
