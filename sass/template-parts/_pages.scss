@@ -1,0 +1,28 @@
+/* Pages
+================================================================================*/
+.intro {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto;
+	line-height: 1.8em;
+	font-size: 1.3em;
+}
+.contact__link {
+	width: 100%;
+	background-color: $main-color;
+	padding: 1em 0;
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: bold;
+	position: relative;
+	a {
+		color: $base-font-color;
+		text-decoration: none;
+		position: absolute;
+		display: block;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+	}
+}

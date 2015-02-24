@@ -1,0 +1,63 @@
+/* Header
+================================================================================*/
+.site__header {
+	padding: 2em 0;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.tagline__main {
+		width: 100%;
+		margin-top: 1.5em;
+		text-align: center;
+		font-size: 2.5em;
+		text-transform: uppercase;
+		font-weight: bold;
+		line-height: 1.2em;
+		color: #222;
+	}
+	.sub__full{
+		display: none;
+		.logo {
+			max-width: 330px;
+			max-height: 190px;
+			float: left;
+		}
+		.tagline {
+			position: absolute;
+			padding-left: 350px;
+			width: 100%;
+			top: 80px;
+			color: #6d6e71;
+			text-transform: lowercase;
+			font-weight: bold;
+			font-size: 2em;
+		}
+		.tagline__left,
+		.tagline__right {
+			display: none;
+			@include media-query(1070px) {
+				display: block;
+			}
+		}
+		.tagline__left {
+			float: left;
+		}
+		.tagline__right {
+			float: right;
+		}
+		@include media-query(1070px) {
+			display: block;
+		}
+	}
+	.sub__mobile {
+		display: block;
+		@include media-query(1070px) {
+			display: none;
+		}
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
