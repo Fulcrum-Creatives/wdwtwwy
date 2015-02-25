@@ -399,6 +399,11 @@ body {
   clear: both;
 }
 
+.three-col {
+  width: 33%;
+  float: left;
+}
+
 .alignleft,
 img.alignleft {
   display: inline;
@@ -442,6 +447,7 @@ img.aligncenter {
 ================================================================================*/
 .site__header {
   padding: 2em 0;
+  border-top: 10px solid #231f20;
 }
 .site__header img {
   width: 100%;
@@ -537,6 +543,122 @@ img.aligncenter {
   left: 0px;
   bottom: 0px;
   right: 0px;
+}
+.contact__link.thumb {
+  max-width: 423px;
+  max-height: 423px;
+  position: relative;
+  padding: 0.5em;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1em;
+  background-color: #808083;
+  color: #fff;
+}
+.contact__link.thumb img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery {
+  margin-top: 5em;
+  text-align: center;
+}
+
+.gallery__item {
+  width: 423px;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1em;
+}
+@media screen and (min-width: 424px) {
+  .gallery__item {
+    width: 423px;
+    max-width: none;
+    height: 423px;
+  }
+}
+.gallery__item img {
+  width: 100%;
+  height: auto;
+}
+.gallery__item .thumbnail {
+  position: relative;
+  z-index: 10;
+}
+.gallery__item .overlay {
+  position: absolute;
+  z-index: 20;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  padding-top: 4em;
+  background-color: #ffd002;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease;
+}
+@media screen and (min-width: 424px) {
+  .gallery__item .overlay {
+    padding-top: 4.5em;
+  }
+}
+.gallery__item .overlay:hover {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease;
+}
+.gallery__item .overlay a {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+.gallery__item .overlay .name,
+.gallery__item .overlay .cares-text {
+  color: #fff;
+}
+.gallery__item .overlay .care {
+  padding-top: 1.5em;
+  font-size: 1.3em;
+}
+.gallery__item.link .overlay {
+  background-color: #808083;
+  opacity: 1;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 1em;
+  color: #fff;
+  padding-top: 3.5em;
+}
+@media screen and (min-width: 424px) {
+  .gallery__item.link .overlay {
+    padding-top: 4em;
+  }
+}
+
+/* Footer
+================================================================================*/
+.body__footer {
+  background-color: #231f20;
+  color: #fff;
+  margin-top: 4.5em;
+}
+.body__footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.body__footer .body__content {
+  padding: 3em 0.5em 2em;
 }
 
 /* Print Styles

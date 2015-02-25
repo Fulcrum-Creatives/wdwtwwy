@@ -25,4 +25,97 @@
 		bottom: 0px;
 		right: 0px;
 	}
+	&.thumb {
+		max-width: 423px;
+		max-height: 423px;
+		position: relative;
+		padding: 0.5em;
+		font-weight: bold;
+		text-align: center;
+		font-size: 1.5em;
+		line-height: 1em;
+		background-color: $secondary-color;
+		color: #fff;
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.gallery {
+	margin-top: 5em;
+	text-align: center;
+}
+.gallery__item {
+	width: 423px;
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 1em;
+	@include media-query(424px) {
+		width: 423px;
+		max-width: none;
+		height: 423px;
+	}
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.thumbnail {
+		position: relative;
+		z-index: 10;
+	}
+	.overlay {
+		position: absolute;
+		z-index: 20;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		padding-top: 4em;
+		background-color: $main-color;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+		@include media-query(424px) {
+			padding-top: 4.5em;
+		}
+		&:hover {
+			opacity: 1;
+			transition: opacity 0.2s ease;
+		}
+		a {
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			bottom: 0px;
+			right: 0px;
+		}
+		.name,
+		.cares-text {
+			color: #fff;
+		}
+		.care {
+			padding-top: 1.5em;
+			font-size: 1.3em;
+		}
+	}
+	&.link {
+		.overlay {
+			background-color: $secondary-color;
+			opacity: 1;
+			font-weight: bold;
+			text-align: center;
+			font-size: 1.5em;
+			line-height: 1em;
+			color: #fff;
+			padding-top: 3.5em;
+			@include media-query(424px) {
+				padding-top: 4em;
+			}
+		}
+	}
 }

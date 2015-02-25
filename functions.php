@@ -24,6 +24,13 @@ function theme_support() {
      * Post Thumbnails
      */
     add_theme_support( 'post-thumbnails' );
+
+    add_image_size( 'care-large', 650, 650, true );
+    add_image_size( 'care-large@2', 1300, 1300, true );
+
+    add_image_size( 'care-thumb', 423, 423, true );
+    add_image_size( 'care-thumb@2', 846, 846, true );
+
     /**
      * Post Formats
      */
@@ -92,6 +99,11 @@ function load_javascript() {
      */
     wp_register_script( 'main.min.js', THEME_URL . 'js/main.min.js', false, '1.0', true );
     wp_enqueue_script( 'main.min.js' );
+    /**
+     * Picturefill
+     */
+    wp_register_script( 'picturefill', THEME_URL . 'js/picturefill.js', false, '1.0', false );
+    wp_enqueue_script( 'picturefill' );
     /**
      * Comment Thread
      */
