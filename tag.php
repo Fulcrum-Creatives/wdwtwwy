@@ -1,9 +1,8 @@
 <?php get_header(); ?>
-<section id="main" itemprop="mainContentOfPage" role="main">
-    <header>
-        <h1 class="page-title"><?php printf( __( 'Tag: %s', DOMAIN ),  single_tag_title( '', false ) ); ?></h1>
-    </header>
-    <?php get_template_part( 'template-parts/content/content' ); ?>
-</section>
-
+<main id="main" itemprop="mainContentOfPage" role="main">
+	<div class="body__content">
+	    <h1><?php _e('Page Not Found', DOMAIN); ?></h1>  
+	    <p><?php _e('Sorry, but the page you requested has not been found', DOMAIN); ?></p>   
+	</div>
+</main>
 <?php get_footer(); ?>

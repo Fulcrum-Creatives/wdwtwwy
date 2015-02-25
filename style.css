@@ -564,6 +564,7 @@ img.aligncenter {
 .gallery {
   margin-top: 5em;
   text-align: center;
+  overflow: hidden;
 }
 
 .gallery__item {
@@ -652,13 +653,71 @@ img.aligncenter {
   background-color: #231f20;
   color: #fff;
   margin-top: 4.5em;
+  font-size: 1.3em;
 }
 .body__footer a {
   color: #fff;
   text-decoration: none;
 }
 .body__footer .body__content {
-  padding: 3em 0.5em 2em;
+  padding: 3em 7.5em 2em;
+  font-size: 1.2;
+}
+.body__footer .left-col {
+  width: 430px;
+  max-width: 100%;
+  float: left;
+}
+.body__footer .right-col {
+  width: 860px;
+  max-width: 100%;
+}
+.body__footer .leader {
+  text-transform: uppercase;
+}
+.body__footer .co-name {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.body__footer .social-links {
+  margin: 1em 0;
+  padding: 0 1.5em;
+  list-style-type: none;
+  overflow: hidden;
+}
+.body__footer .social-links li {
+  float: left;
+  width: 35px;
+  height: 35px;
+  background-repeat: none;
+  background-size: 35px 35px;
+  position: relative;
+  margin: 0 0.5em;
+}
+.body__footer .social-links li.icon-diamond {
+  background-image: url(images/icon-diamond.png);
+}
+.body__footer .social-links li.icon-twitter {
+  background-image: url(images/icon-twitter.png);
+}
+.body__footer .social-links li.icon-instagram {
+  background-image: url(images/icon-instagram.png);
+}
+.body__footer .social-links li a {
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+.body__footer .fc-url {
+  text-transform: lowercase;
+}
+.body__footer .address,
+.body__footer .fc-url,
+.body__footer .copyright {
+  margin-bottom: 1em;
 }
 
 /* Print Styles

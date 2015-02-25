@@ -1,20 +1,8 @@
 <?php get_header(); ?>
-<section id="main" itemprop="mainContentOfPage" role="main">
-    <header>
-        <h1 class="page-title">
-            <?php
-            if ( is_day() ) :
-                printf( __( 'Daily Archives: %s', DOMAIN ), get_the_date() );
-            elseif ( is_month() ) :
-                printf( __( 'Monthly Archives: %s', DOMAIN ), get_the_date( 'F Y' ) );
-            elseif ( is_year() ) :
-                printf( __( 'Yearly Archives: %d', DOMAIN ), get_the_date( 'Y' ) );
-            else :
-                _e( 'Archives', DOMAIN );
-            endif;
-            ?>
-        </h1>
-    </header>
-    <?php get_template_part( 'template-parts/content/content' ); ?>   
-</section>
+<main id="main" itemprop="mainContentOfPage" role="main">
+    <div class="body__content">
+        <h1><?php _e('Page Not Found', DOMAIN); ?></h1>  
+        <p><?php _e('Sorry, but the page you requested has not been found', DOMAIN); ?></p>   
+    </div>
+</main>
 <?php get_footer(); ?>

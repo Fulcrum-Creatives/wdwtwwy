@@ -4,11 +4,69 @@
 	background-color: $complementary-color;
 	color: #fff;
 	margin-top: 4.5em;
+	font-size: 1.3em;
 	a {
 		color: #fff;
 		text-decoration: none;
 	}
 	.body__content {
-		padding: 3em 0.5em 2em;
+		padding: 3em 7.5em 2em;
+		font-size: 1.2
+	}
+	.left-col {
+		width: 430px;
+		max-width: 100%;
+		float: left;
+	}
+	.right-col {
+		width: 860px;
+		max-width: 100%;
+	}
+	.leader {
+		text-transform: uppercase;
+	}
+	.co-name {
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.social-links {
+		margin: 1em 0;
+		padding: 0 1.5em;
+		list-style-type: none;
+		overflow: hidden;
+		li {
+			float: left;
+			width: 35px;
+			height: 35px;
+			background-repeat: none;
+			background-size: 35px 35px;
+			position: relative;
+			margin: 0 0.5em;
+			&.icon-diamond {
+				background-image: url(images/icon-diamond.png);
+			}
+			&.icon-twitter {
+				background-image: url(images/icon-twitter.png);
+			}
+			&.icon-instagram {
+				background-image: url(images/icon-instagram.png);
+			}
+			a {
+				display: block;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				bottom: 0px;
+				right: 0px;
+			}
+		}
+	}
+	.fc-url {
+		text-transform: lowercase;
+	}
+	.address,
+	.fc-url,
+	.copyright {
+		margin-bottom: 1em;
 	}
 }
