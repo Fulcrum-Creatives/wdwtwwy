@@ -30,7 +30,11 @@ $wdwtwwy_tagline_2 = ( get_field( 'wdwtwwy_tagline_2', 'option' ) ? get_field( '
     <div class="body__content">
         <?php if ( is_front_page() || is_home() ) : ?>
     		<div class="logo__main">
-        		<h1><img src="<?php echo $wdwtwwy_header_image_1['url']; ?>" alt="<?php echo $wdwtwwy_header_image_1['url']; ?>" /></h1>
+        		<h1>
+                <a href="<?php echo home_url(); ?>">
+                <img src="<?php echo $wdwtwwy_header_image_1['url']; ?>" alt="<?php echo $wdwtwwy_header_image_1['url']; ?>" />
+                </a>
+                </h1>
         	</div>
         	<div class="tagline__main">
         		<?php echo $wdwtwwy_tagline_2; ?>
@@ -38,7 +42,11 @@ $wdwtwwy_tagline_2 = ( get_field( 'wdwtwwy_tagline_2', 'option' ) ? get_field( '
         <?php else : ?>
         	<div class="sub__full">
 	        	<div class="logo">
-	        		<h1><img src="<?php echo $wdwtwwy_header_image_2['url']; ?>" alt="<?php echo $wdwtwwy_header_image_2['url']; ?>" /></h1>
+	        		<h1>
+                    <a href="<?php echo home_url(); ?>">
+                    <img src="<?php echo $wdwtwwy_header_image_2['url']; ?>" alt="<?php echo $wdwtwwy_header_image_2['url']; ?>" />
+                    </a>
+                    </h1>
 	        	</div>
 	        	<div class="tagline">
 	        		<span class="tagline__left">
@@ -51,7 +59,9 @@ $wdwtwwy_tagline_2 = ( get_field( 'wdwtwwy_tagline_2', 'option' ) ? get_field( '
 	        </div>
 	        <div class="sub__mobile">
 	        	<div class="logo__main">
+                    <a href="<?php echo home_url(); ?>">
             		<img src="<?php echo $wdwtwwy_header_image_1['url']; ?>" alt="<?php echo $wdwtwwy_header_image_1['url']; ?>" />
+                    </a>
             	</div>
             	<div class="tagline__main">
             		<?php echo $wdwtwwy_tagline_2; ?>

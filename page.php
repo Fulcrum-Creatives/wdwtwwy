@@ -1,8 +1,11 @@
 <?php get_header(); ?>
 <main id="main" itemprop="mainContentOfPage" role="main">
     <div class="body__content">
-        <h1><?php _e('Page Not Found', DOMAIN); ?></h1>  
-        <p><?php _e('Sorry, but the page you requested has not been found', DOMAIN); ?></p>   
+    	<?php 
+    	if (have_posts()) : while (have_posts()) : the_post();
+    		the_content();
+        endwhile; endif; wp_reset_postdata();
+        ?>  
     </div>
 </main>
 <?php get_footer(); ?>

@@ -31,7 +31,7 @@ $wdwtwwy_footer_text = ( get_field( 'wdwtwwy_footer_text', 'option' ) ? get_fiel
 				<?php echo $wdwtwwy_co_phone_number; ?>
 			</div>
 			<div class="copyright" itemprop="copyrightHolder">
-		       &copy; <span itemprop="copyrightYear"><?php echo date('Y'); ?></span> <?php bloginfo( 'name' ); ?>
+		       &copy; <span itemprop="copyrightYear"><?php echo date('Y'); ?></span> <?php echo $wdwtwwy_company_name; ?>
 		    </div>
 		</div>
 		<div class="right-col">

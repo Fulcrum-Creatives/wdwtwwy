@@ -10,17 +10,35 @@
 		text-decoration: none;
 	}
 	.body__content {
-		padding: 3em 7.5em 2em;
-		font-size: 1.2
+		padding: 3em 0.5em 2em;
+		font-size: 1.2;
+		@include media-query(782px) {
+			padding: 3em 7.5em 2em;
+		}
 	}
 	.left-col {
-		width: 430px;
-		max-width: 100%;
-		float: left;
+		width: 100%;
+		float: none;
+		margin: 0 auto;
+		@include media-query(421px) {
+			width: 275px;
+			max-width: 100%;
+		}
+		@include media-query(1061px) {
+			float: left;
+		}
 	}
 	.right-col {
-		width: 860px;
-		max-width: 100%;
+		width: 100%;
+		float: none;
+		margin: 0 auto;
+		@include media-query(421px) {
+			width: 420px;
+			max-width: 100%;
+		}
+		@include media-query(1061px) {
+			float: right;
+		}
 	}
 	.leader {
 		text-transform: uppercase;

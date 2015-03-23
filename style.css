@@ -1,9 +1,9 @@
 /*!
-Theme Name: WP Boilerplate
-Theme URI: http://yoursite.com/
-Author: Author Name
-Author URI: http://yoursite.com/
-Description: Description
+Theme Name: We Don't Want to Work With You
+Theme URI: http://wdwtwwy.com/
+Author: Fulcrum Creatives
+Author URI: http://funlcrumcreatives.com/
+Description: Theme for We Don't Want to Work With You
 Version: 0.0.1
 Tags: white, black
 License: GNU General Public License v2 or later
@@ -398,10 +398,39 @@ body {
   display: block;
   clear: both;
 }
+.body__content.care {
+  padding: 0 65px;
+}
 
 .three-col {
   width: 33%;
   float: left;
+}
+
+.col__left {
+  width: 100%;
+  float: none;
+  margin-bottom: 3em;
+}
+@media screen and (min-width: 830px) {
+  .col__left {
+    width: 50%;
+    float: left;
+    margin-bottom: 0;
+  }
+}
+
+.col__right {
+  width: 100%;
+  float: none;
+  padding-left: 0;
+}
+@media screen and (min-width: 830px) {
+  .col__right {
+    width: 50%;
+    float: left;
+    padding-left: 2.5em;
+  }
 }
 
 .alignleft,
@@ -474,12 +503,12 @@ img.aligncenter {
 .site__header .sub__full .tagline {
   position: absolute;
   padding-left: 350px;
-  width: 100%;
+  width: 98%;
   top: 80px;
   color: #6d6e71;
   text-transform: lowercase;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.8em;
 }
 .site__header .sub__full .tagline__left,
 .site__header .sub__full .tagline__right {
@@ -517,12 +546,98 @@ img.aligncenter {
 
 /* Pages
 ================================================================================*/
-.intro {
-  text-align: center;
-  width: 50%;
+.view__full {
+  display: block;
+  overflow: hidden;
   margin: 0 auto;
+  width: 423px;
+  -webkit-transition: opacity 2s ease;
+          transition: opacity 2s ease;
+}
+@media screen and (min-width: 880px) {
+  .view__full {
+    width: 846px;
+  }
+}
+@media screen and (min-width: 1302px) {
+  .view__full {
+    width: 100%;
+  }
+}
+
+.view__mobile {
+  display: none;
+  -webkit-transition: opacity 2s ease;
+          transition: opacity 2s ease;
+}
+
+.view__toggle {
+  max-width: 320px;
+  margin: 0 auto;
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .view__toggle {
+    display: none;
+  }
+}
+
+.view__choose {
+  height: 49px;
+  width: 150px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: right;
+  padding-left: 32px;
+  padding-right: 10px;
+  font-size: 80%;
+  float: left;
+  font-weight: bold;
+  line-height: 3.5em;
+  background-color: #231f20;
+  background-position: 10px 8px;
+  background-repeat: no-repeat;
+}
+.view__choose:first-child {
+  margin-right: 5px;
+}
+.view__choose.view__picture {
+  background-image: url(images/photo-view.png);
+}
+.view__choose.view__list {
+  background-image: url(images/list-view.png);
+}
+.view__choose.active {
+  background-color: #cfd1d2;
+}
+.view__choose:hover {
+  cursor: pointer;
+}
+
+.list__item {
+  text-align: left;
+  margin: 1em 0;
+}
+.list__item a {
+  color: #414042;
+  text-decoration: none;
+}
+
+.intro {
+  width: 100%;
+  margin: 0;
+  text-align: center;
   line-height: 1.8em;
   font-size: 1.3em;
+}
+@media screen and (min-width: 600px) {
+  .intro {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
 
 .contact__link {
@@ -647,6 +762,223 @@ img.aligncenter {
   }
 }
 
+/* Single
+================================================================================*/
+.care {
+  position: relative;
+  overflow: hidden;
+}
+.care .nav__posts {
+  position: absolute;
+  top: 50%;
+  margin-top: -42px;
+  background-color: #ffd002;
+  width: 48px;
+  height: 85px;
+  -webkit-transition: width 0.3s ease;
+          transition: width 0.3s ease;
+}
+.care .nav__posts .nav__pagi--text {
+  position: relative;
+  top: 30px;
+  padding: 0 1em;
+  opacity: 0;
+}
+.care .nav__posts.next {
+  right: 0px;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.care .nav__posts.next .chevron {
+  right: 4px;
+}
+.care .nav__posts.next .nav__pagi--text {
+  padding-right: 2em;
+}
+.care .nav__posts.next:hover {
+  width: 138px;
+}
+.care .nav__posts.prev {
+  left: 0px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+.care .nav__posts.prev .chevron {
+  left: 4px;
+}
+.care .nav__posts.prev .nav__pagi--text {
+  padding-left: 2em;
+}
+.care .nav__posts.prev:hover {
+  width: 170px;
+}
+.care .nav__posts .chevron {
+  position: absolute;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+  top: 26px;
+}
+.care .nav__posts:hover {
+  -webkit-transition: width 0.3s ease;
+          transition: width 0.3s ease;
+  width: auto;
+}
+.care .nav__posts:hover .nav__pagi--text {
+  opacity: 1;
+  -webkit-transition: opacity 0.1s ease 0.3s;
+          transition: opacity 0.1s ease 0.3s;
+}
+.care .nav__posts a {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+
+.care__image {
+  max-width: 100%;
+}
+.care__image img {
+  width: 100%;
+  height: auto;
+}
+
+.care__why em,
+.care__why p {
+  display: inline;
+}
+
+.care__content {
+  margin-bottom: 1em;
+  line-height: 2.2em;
+  font-size: 1.2em;
+}
+.care__content em {
+  font-weight: thin;
+}
+
+.care__name {
+  margin-bottom: 0;
+}
+
+.name__bold {
+  font-weight: bold;
+}
+
+.care__care {
+  font-size: 2em;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Forms
+================================================================================*/
+.gform_heading {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+}
+
+.gform_body {
+  width: 100%;
+  margin: 0;
+}
+@media screen and (min-width: 600px) {
+  .gform_body {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+.gform_body ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gfield {
+  margin-bottom: 1em;
+}
+.gfield .gfield_label {
+  display: none;
+}
+.gfield.file-upload {
+  position: relative;
+}
+.gfield.file-upload .gfield_label {
+  display: block;
+  margin-bottom: 2em;
+  font-weight: bold;
+  margin-bottom: 1.5em;
+}
+.gfield.file-upload .gfield_required {
+  display: none;
+}
+.gfield.file-upload .gfield_description {
+  position: absolute;
+  top: 26px;
+  font-size: 0.8em;
+}
+.gfield input[type="text"] {
+  width: 100%;
+  padding: 0.25em 0.5em;
+  font-size: 0.8em;
+  border: 2px solid #9a999c;
+}
+.gfield.form-one-half {
+  width: 100%;
+  float: none;
+}
+.gfield.form-one-half input[type="text"] {
+  width: 100%;
+}
+.gfield.form-one-half:first-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 600px) {
+  .gfield.form-one-half:first-child {
+    margin-right: 2%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .gfield.form-one-half {
+    width: 49%;
+    float: left;
+  }
+}
+.gfield input:focus {
+  outline: none;
+  border: 2px solid #ffd002;
+}
+.gfield.cust-html {
+  font-size: 0.8em;
+}
+
+.gform_footer {
+  margin-top: 2em;
+  text-align: center;
+}
+.gform_footer input[type="submit"] {
+  background-color: #ffd002;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  width: 180px;
+  padding: 0.25em;
+  outline: 0;
+  border: none;
+  -webkit-transition: background-color 0.3s ease;
+          transition: background-color 0.3s ease;
+}
+.gform_footer input[type="submit"]:hover {
+  -webkit-transition: background-color 0.3s ease;
+          transition: background-color 0.3s ease;
+  background-color: #ffd935;
+}
+
 /* Footer
 ================================================================================*/
 .body__footer {
@@ -660,17 +992,45 @@ img.aligncenter {
   text-decoration: none;
 }
 .body__footer .body__content {
-  padding: 3em 7.5em 2em;
+  padding: 3em 0.5em 2em;
   font-size: 1.2;
 }
+@media screen and (min-width: 782px) {
+  .body__footer .body__content {
+    padding: 3em 7.5em 2em;
+  }
+}
 .body__footer .left-col {
-  width: 430px;
-  max-width: 100%;
-  float: left;
+  width: 100%;
+  float: none;
+  margin: 0 auto;
+}
+@media screen and (min-width: 421px) {
+  .body__footer .left-col {
+    width: 275px;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1061px) {
+  .body__footer .left-col {
+    float: left;
+  }
 }
 .body__footer .right-col {
-  width: 860px;
-  max-width: 100%;
+  width: 100%;
+  float: none;
+  margin: 0 auto;
+}
+@media screen and (min-width: 421px) {
+  .body__footer .right-col {
+    width: 420px;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1061px) {
+  .body__footer .right-col {
+    float: right;
+  }
 }
 .body__footer .leader {
   text-transform: uppercase;

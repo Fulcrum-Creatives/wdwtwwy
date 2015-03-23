@@ -43,10 +43,7 @@ module.exports = function(grunt) {
                 src: [
                     'js/lib/no-conflict/no-conflict.js',
                     'js/lib/skip-navigation/skip-navigation.js',
-                    'js/lib/mobile-menu/mobile-menu.js',
-                    'js/lib/carousel/carousel.js',
-                    'js/lib/twitter/twitter.js',
-                    'js/lib/faq/faq.js'
+                    'js/lib/view-toggle/view-toggle.js',
                 ],
                 dest: 'js/lib/dev.main.js',
             },
