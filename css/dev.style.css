@@ -4,7 +4,7 @@ Theme URI: https://github.com/Fulcrum-Creatives/wdwtwwy
 Author: Fulcrum Creatives
 Author URI: http://fulcrumcreatives.com/
 Description: Custom WordPress Framework
-Version: 2.0.0
+Version: 2.0.1
 Tags: 
 Text Domain: fcwp
 License: GNU General Public License v2 or later
@@ -395,7 +395,7 @@ h6 {
   font-family: 'AvenirNextLTW01-Heavy', Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
-.avenir-bold, .gform_title {
+.avenir-bold, .gform_title, .gform_confirmation_message {
   font-family: 'Avenir Next LT W01 Bold', Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -748,6 +748,12 @@ h6 {
   transition: background-color 0.4s ease, color 0.04s ease;
   background-color: #222222;
   color: #ffd002;
+}
+
+.gform_confirmation_message {
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.125em;
 }
 
 /**--------------------------------------------------------

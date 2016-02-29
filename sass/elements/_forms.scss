@@ -120,3 +120,8 @@
     }
   }
 }
+.gform_confirmation_message {
+  text-align: center;
+  @extend .avenir-bold;
+  @include font-size(18);
+}
