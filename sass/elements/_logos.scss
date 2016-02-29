@@ -1,0 +1,63 @@
+/**--------------------------------------------------------
+ * Logos
+ *---------------------------------------------------------*/
+.header__tagline {
+  @include font-size(28);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2em;
+  margin: 1.25em 0 0.5em;
+  a {
+    color: $color__header;
+    text-decoration: none;
+  }
+  @include media-query(460px) {
+    @include font-size(42);
+  }
+}
+.sub__full{
+  display: none;
+  a {
+    display: block;
+  }
+  .logo {
+    max-width: 330px;
+    max-height: 200px;
+    float: left;
+  }
+  .tagline {
+    position: absolute;
+    padding-left: 350px;
+    width: 98%;
+    top: 80px;
+    color: #6d6e71;
+    text-transform: lowercase;
+    font-weight: bold;
+    @include font-size(34);
+  }
+  .tagline__left,
+  .tagline__right {
+    display: none;
+    @include media-query(1070px) {
+      display: block;
+    }
+  }
+  .tagline__left {
+    float: left;
+  }
+  .tagline__right {
+    float: right;
+    a {
+      display: inline-block;
+    }
+  }
+  @include media-query(1070px) {
+    display: block;
+  }
+}
+.sub__mobile {
+  display: block;
+  @include media-query(1070px) {
+    display: none;
+  }
+}

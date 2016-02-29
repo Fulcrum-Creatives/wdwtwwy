@@ -1,0 +1,39 @@
+/*---------------------------------------------------------
+ * Menu
+---------------------------------------------------------*/
+.primary-nav {
+  position: relative;
+}
+.sm {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  list-style-type: none;
+  text-align: center;
+  &.horizontal {
+    &.right {
+      @include hor-list-pos(right);
+    }
+    &.left {
+      @include hor-list-pos(left);
+    }
+    &.right {
+      @include hor-list-pos(center);
+    }
+    li {
+      vertical-align: top;
+    }
+  }
+  li {
+    position: relative;
+    display: inline-block;
+    float: none;
+  }
+  a {
+    position: relative;
+    display: block;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+}

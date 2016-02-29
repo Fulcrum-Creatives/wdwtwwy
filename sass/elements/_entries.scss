@@ -1,0 +1,123 @@
+/*---------------------------------------------------------
+ * Entries
+---------------------------------------------------------*/
+.intro-text {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  line-height: 1.8;
+  @include font-size(16);
+  p {
+    line-height: 1.8;
+    margin: 0;
+  }
+  @include media-query(481px) {
+    @include font-size(24);
+    text-align: center;
+  }
+  @include media-query(769px) {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+.gallery {
+  max-width: 420px;
+  margin: 2.5em auto 0;
+  text-align: center;
+  overflow: hidden;
+  display: block;
+  @include media-query(855px) {
+    max-width: 840px;
+  }
+  @include media-query(1275px) {
+    max-width: 1280px;
+  }
+}
+.gallery__item {
+  width: 420px;
+  height: 420px;
+  max-width: 100%;
+  height: auto;
+  position: relative;
+  font-weight: bold;
+  text-align: center;
+  line-height: 0em;
+  float: left;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  .thumbnail {
+    position: relative;
+    z-index: 10;
+  }
+  .overlay {
+    position: absolute;
+    z-index: 20;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    padding: 7.5em 0.5em 0;
+    background-color: $yellow;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    &:hover {
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+    a {
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+    }
+    .name,
+    .cares-text {
+      color: #fff;
+      @include font-size(28);
+      line-height: 1.5em;
+    }
+    .care {
+      padding-top: 1.5em;
+      font-size: 1.3em;
+      padding-bottom: 1em;
+      @include font-size(34);
+      line-height: 1em;
+    }
+  }
+  &.link {
+    .overlay {
+      background-color: $dark-grey;
+      opacity: 1;
+      font-weight: bold;
+      text-align: center;
+      @include font-size(40);
+      line-height: 1.5em;
+      color: #fff;
+      padding-top: 3.5em;
+      transition: background-color 0.4s ease;
+      &:hover {
+        background-color: $yellow;
+        transition: background-color 0.4s ease;
+      }
+      @include media-query(424px) {
+        padding-top: 4em;
+      }
+    }
+  }
+}
+.list {
+  padding: 0 1em;
+  display: none;
+}
+.list__item {
+  text-align: left;
+  margin: 1em 0;
+  a {
+    color: $color__font;
+    text-decoration: none;
+  }
+}

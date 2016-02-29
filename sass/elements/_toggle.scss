@@ -1,0 +1,43 @@
+/**--------------------------------------------------------
+ * Toggle
+ *---------------------------------------------------------*/
+.view__toggle {
+  display: block;
+  width: 320px;
+  margin: 0 auto 1.5em;
+  clear: both;
+  overflow: hidden;
+  @include media-query(769px) {
+    display: none;
+  }
+}
+.view__choose {
+  height: 49px;
+  width: 152px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: right;
+  padding: 0 10px 0 32px;
+  float: left;
+  font-weight: bold;
+  line-height: 3.5em;
+  background-color: $color__header;
+  background-position: 10px 8px;
+  background-repeat: no-repeat;
+  @include font-size(14);
+  &:first-child {
+    margin-right: 16px;
+  }
+  &.view__picture {
+    background-image: url(images/photo-view.png);
+  }
+  &.view__list {
+    background-image: url(images/list-view.png);
+  }
+  &.active {
+    background-color: $light-grey;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

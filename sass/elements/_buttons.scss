@@ -1,0 +1,23 @@
+/**--------------------------------------------------------
+ * Buttons
+ *---------------------------------------------------------*/
+.button__one {
+  display: block;
+  width: 100%;
+  background-color: $yellow;
+  @include font-size(18);
+  padding: 1em 0;
+  margin: 1.5em 0;
+  color: $color__font;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  &:hover {
+    background-color: $color__font;
+    color: $yellow;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  @include media-query(400px) {
+    @include font-size(28);
+  }
+}

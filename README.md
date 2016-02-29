@@ -1,3 +1,1 @@
-WordPress Theme Boilerplate
-===========================
-A WordPress Theme Boilerplate
+# The Common House WordPress Theme

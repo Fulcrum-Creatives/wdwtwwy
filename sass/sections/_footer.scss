@@ -1,0 +1,97 @@
+/*---------------------------------------------------------
+ * Footer
+---------------------------------------------------------*/
+.footer {
+  background-color: $color__header;
+  color: $white;
+  @include font-size(23);
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+  .content__wrapper {
+    padding: 3em 0.5em 2em;
+    font-size: 1.2;
+    @include media-query(782px) {
+      padding: 3em 7.5em 2em;
+    }
+  }
+  .left-col {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    @include media-query(480px) {
+      max-width: 100%;
+    }
+    @include media-query(1061px) {
+      width: 275px;
+      float: left;
+    }
+  }
+  .right-col {
+    width: 100%;
+    float: none;
+    margin: 0 auto;
+    @include media-query(421px) {
+      max-width: 100%;
+    }
+    @include media-query(1061px) {
+      width: 420px;
+      float: right;
+    }
+  }
+  .leader {
+    text-transform: uppercase;
+  }
+  .co-name {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    @include media-query(1061px) {
+      display: inline;
+    }
+  }
+  .social-links {
+    margin: 1em 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+    li {
+      float: left;
+      width: 35px;
+      height: 35px;
+      background-repeat: none;
+      background-size: 35px 35px;
+      position: relative;
+      margin: 0 0.5em;
+      &.icon-diamond {
+        background-image: url(images/icon-diamond.png);
+      }
+      &.icon-twitter {
+        background-image: url(images/icon-twitter.png);
+      }
+      &.icon-instagram {
+        background-image: url(images/icon-instagram.png);
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+      a {
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+      }
+    }
+  }
+  .fc-url {
+    text-transform: lowercase;
+  }
+  .address,
+  .fc-url,
+  .copyright {
+    margin-bottom: 1em;
+  }
+}

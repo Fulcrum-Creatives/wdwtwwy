@@ -1,0 +1,122 @@
+/*---------------------------------------------------------
+ * Forms
+---------------------------------------------------------*/
+.gform_heading {
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-weight: bold;
+}
+.gform_body {
+  width: 100%;
+  margin: 0;
+  @include media-query(600px) {
+    width: 50%;
+    margin: 0 auto;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+.gform_title {
+  @extend .avenir-bold;
+  @include font-size(18);
+}
+.gfield {
+  margin-bottom: 1em;
+  .gfield_label,
+  .ginput_container_address label {
+    margin-bottom: 0.75em;
+    display: block;
+    text-transform: uppercase;
+  }
+  .ginput_container {
+    label {
+      margin-top: 1em;
+    }
+  }
+  &.file-upload {
+    position: relative;
+    .gfield_label {
+      display: block;
+      margin-bottom: 2em;
+      font-weight: bold;
+      margin-bottom: 1.5em;
+    }
+    .gfield_required {
+      display: none;
+    }
+    .gfield_description {
+      position: absolute;
+      top: 26px;
+      @include font-size(16);
+    }
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5em 0.5em;
+    @include font-size(16);
+    border: 2px solid $color__header;
+  }
+  .gfield_radio {
+    label {
+      right: -10px;
+      position: relative;
+    }
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+  &.form-one-half {
+    width: 100%;
+    float: none;
+    input[type="text"] {
+      width: 100%;
+    }
+    &.first {
+      margin-right: 0;
+      @include media-query(600px) {
+        margin-right: 2%;
+      }
+    }
+    @include media-query(600px) {
+      width: 49%;
+      float: left;
+    }
+  }
+  input:focus {
+      outline:none;
+      border: 2px solid $yellow;
+  }
+  &.cust-html {
+    @include font-size(16);
+  }
+  .ginput_container_fileupload {
+    margin-top: 0.5em;
+  }
+}
+.gform_footer {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 2em;
+  text-align: center;
+  input[type="submit"] {
+    background-color: $yellow;
+    color: #fff;
+    font-weight: bold;
+    @include font-size(21);
+    text-transform: uppercase;
+    width: 100%;
+    padding: 0.75em 0.5em;
+    outline: 0;
+    border: none;
+    transition: background-color 0.4s ease, color 0.04s ease;
+    &:hover {
+      transition: background-color 0.4s ease, color 0.04s ease;
+      background-color: $color__header;
+      color: $yellow;
+    }
+  }
+}

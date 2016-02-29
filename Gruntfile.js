@@ -1,153 +1,131 @@
 module.exports = function(grunt) {
-    var autoprefixer = require('autoprefixer-core');
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        // Clean
-        clean: {
-            build: {
-                src: [ '_build' ]
-            }
-        },
-        // Copy
-        copy: {
-            build: {
-                src: [
-                    '**',
-                    '!**/tests/**',
-                    '!**/node_modules/**',
-                    '!**/sass/**',
-                    '!**/src/**',
-                    '!**/tools/**',
-                    '!**/.sass-cache/**',
-                    '!**/assets/**',
-                    '!**/js/lib/**',
-                    '!config.rb',
-                    '!Gruntfile.js',
-                    '!package.json',
-                    '!phpunit.xml.dist',
-                    '!files',
-                    '!wp-tests-config.php',
-                    '!_NOTES.txt',
-                    '!.gitignore'
-                ],
-                dot: [
-                    '.htaccess'
-                ],
-                dest: '_build',
-                expand: true
-            }
-        },
-        // Concat JS
-        concat: {
-            dist: {
-                src: [
-                    'js/lib/no-conflict/no-conflict.js',
-                    'js/lib/skip-navigation/skip-navigation.js'
-                ],
-                dest: 'js/lib/dev.main.js',
-            },
-            ie: {
-                src: [
-                    'js/lib/html5shiv/html5shiv.js',
-                    'js/lib/respond/respond.js',
-                ],
-                dest: 'js/lib/dev.ie.js',
-            }
-        },
-        jshint: {
-            jshint: {
-                beforeconcat: ['lib/skip-navigation/skip-navigation.js'],
-                afterconcat: ['lib/dev.main.js']
-            }
-        },
-        // Uglify
-        uglify: {
-            options: {
-                mangle: false,
-                compress: true,
-            },
-            build: {
-                files: {
-                    'js/main.min.js': ['js/lib/dev.main.js']
-                }
-            },
-            ie: {
-                files: {
-                    'js/ie.min.js': ['js/lib/dev.ie.js']
-                }
-            }
-        },
-        // Sass/
-        sass: {
-            dist: {
-              options: {
-                style: 'expanded',
-                require: 'susy',
-                sourcemap: 'none'
-              },
-              files: {
-                'sass/style.css': 'sass/style.scss',
-                'css/dev/dev.style.css': 'sass/style.scss'
-              }
-            }
-          },
-        postcss: {
-            options: {
-                processors: [
-                  autoprefixer().postcss
-                ]
-            },
-            style: { 
-                src: 'sass/style.css'
-            }
-        },
-        cssmin: {
-          target: {
-            files: {
-              'style.css': 'sass/style.css'
-            }
-          }
-        },
-        // Watch
-        watch: {
-            options: {
-                livereload: true,
-            },
-            scripts: {
-                files: ['js/**/*.js'],
-                tasks: ['jshint', 'concat', 'uglify'],
-                options: {
-                    spawn: false,
-                },
-            },
-            css: {
-              files: ['sass/**/*.scss'],
-              tasks: ['sass', 'postcss', 'cssmin'],
-            }
+	// Project configuration.
+	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+		// Sass
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded',
+					sourcemap: 'none'
+				},
+				files: {
+					'style.css': 'sass/global.scss',
+					'css/dev.style.css': 'sass/global.scss',
+					'css/ie9.style.css': 'sass/ie9.scss',
+				}
+			}
+		},
+    //PostCSS
+    postcss: {
+      options: {
+        processors: [
+          require('autoprefixer')(),
+          require('rucksack-css')({ fallbacks: true })
+        ]
+      },
+      dist: {
+        src: 'style.css',
+        dest: 'style.css'
+      },
+      dev: {
+        src: 'css/dev.style.css',
+        dest: 'css/dev.style.css'
+      },
+    },
+		// CSSmin
+    cssmin: {
+			target: {
+				files: {
+					'style.css': 'style.css'
+				}
+			}
+    },
+		// Concat JS
+    concat: {
+      head: {
+        src: [
+          'js/lib/no-conflict.js',
+          'js/vendor/picturefill.js'
+        ],
+        dest: 'js/head.js'
+      },
+      main: {
+        src: [
+          'js/lib/no-conflict.js',
+          'js/lib/skip-navigation.js',
+          'js/lib/view-toggle.js',
+        ],
+        dest: 'js/scripts.js'
+      },
+      ie: {
+       src: [
+          'js/vendor/html5.js',
+          'js/vendor/respond.js'
+        ],
+        dest: 'js/ie.js'
+      }
+    },
+    // Jshint
+    jshint: {
+      files: [
+      	'js/scripts.js',
+      	'js/ie.js',
+      ],
+			options: {
+				scripturl: true,
+				globals: {
+					jQuery: true
+				}
+			}
+    },
+		// Uglify
+    uglify: {
+      options: {
+        mangle: false,
+        compress: true,
+        quoteStyle: 3
+      },
+      dist: {
+        files: {
+        	'js/head.min.js': 'js/head.js',
+          'js/scripts.min.js': 'js/scripts.js',
+          'js/ie.min.js'     : 'js/ie.js',
         }
-    });
+      }
+    },
 
-    // Clean
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    // Copy
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    // Concat
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    // Uglify
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     // Watch
-    grunt.loadNpmTasks('grunt-contrib-watch');
-    // Sass
-    grunt.loadNpmTasks('grunt-contrib-sass');
-    // PostCSS
-    grunt.loadNpmTasks('grunt-postcss');
-    // CSSMin
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    // JShint
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-
-    // Register Plugins
-    grunt.registerTask('default', ['concat', 'uglify', 'watch', 'postcss', 'sass', 'cssmin', 'jshint']);
-    grunt.registerTask('build', ['clean', 'copy']);
-
+    watch: {
+      scripts: {
+        files: ['js/**/*.js'],
+        tasks: ['concat', 'uglify'],
+        options: {
+          spawn: false
+        }
+      },
+      css: {
+        files: ['sass/**/*.scss'],
+        tasks: ['sass', 'postcss', 'cssmin']
+      }
+    },
+	});
+	// PostCSS
+	grunt.loadNpmTasks('grunt-postcss');
+  // Concat
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  // CSSmin
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  // Jshint
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  // JSValidate
+  grunt.loadNpmTasks('grunt-jsvalidate');
+  // Uglify
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  // Watch
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  // Sass
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  // Watch Task
+  grunt.registerTask('default', ['watch']);
 };
