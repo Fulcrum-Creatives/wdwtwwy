@@ -7,8 +7,8 @@ if ( have_posts() ) :
     $wdwtwwy_name      = dfw_get_field( 'wdwtwwy_name' );
     $wdwtwwy_care      = dfw_get_field( 'wdwtwwy_care' );
     $wdwtwwy_location  = dfw_get_field( 'wdwtwwy_location' );
-    $wdwtwwy_listing_thumbnail = dfw_get_field( 'wdwtwwy_listing_thumbnail' );
-    $srcset_value = wp_get_attachment_image_srcset( $wdwtwwy_listing_thumbnail['ID'], 'tablet' );
+    $wdwtwwy_thumbnail = dfw_get_field( 'wdwtwwy_thumbnail' );
+    $srcset_value = wp_get_attachment_image_srcset( $wdwtwwy_thumbnail['ID'], 'tablet' );
     $srcset = $srcset_value ? ' srcset="' . esc_attr( $srcset_value ) . '"' : '';
     $prev_post = get_adjacent_post( false, '', true );
     $next_post = get_adjacent_post( false, '', false );
@@ -18,7 +18,7 @@ if ( have_posts() ) :
 
         <div class='col__left'>
           <div class="care__image">
-            <img src="<?php echo $wdwtwwy_listing_thumbnail['url']; ?>" <?php echo $srcset; ?> alt="<?php echo $wdwtwwy_listing_thumbnail['alt'] ?>" />
+            <img src="<?php echo $wdwtwwy_thumbnail['url']; ?>" <?php echo $srcset; ?> alt="<?php echo $wdwtwwy_thumbnail['alt'] ?>" />
           </div>
         </div>
 
